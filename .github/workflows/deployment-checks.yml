@@ -4,10 +4,10 @@ on:
 
 jobs:
     demo-job:
-        name: Demo job
+        name: Placeholder for release checks script
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
             - name: Just echo
               run: |     
-                echo "Hello World!"
+                echo "Placeholder for release checks script!"
