@@ -6,11 +6,10 @@ on:
 
 jobs:
     demo-job:
-        name: Demo job
+        name: Placeholder for deploy-and-merge script
         runs-on: ubuntu-latest
-        if: github.event.pull_request.base.ref == 'release/**'
         steps:
           - uses: actions/checkout@v3
-          - name: Just list files
+          - name: Just Echo 
             run: |     
-                echo "Hello World!"
+                echo "Placeholder for deploy-and-merge script!"
