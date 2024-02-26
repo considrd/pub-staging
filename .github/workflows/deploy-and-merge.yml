@@ -7,6 +7,7 @@ on:
 jobs:
     demo-job:
         name: Placeholder for deploy-and-merge script
+        if: github.event.review.state == 'APPROVED'
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v3
