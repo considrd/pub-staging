@@ -6,6 +6,12 @@ on:
     - 'release/**'
     
 jobs:
+    linting:
+      name: runner / vale
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: errata-ai/vale-action@reviewdog
     demo-job:
         name: Placeholder for release checks script
         runs-on: ubuntu-latest
