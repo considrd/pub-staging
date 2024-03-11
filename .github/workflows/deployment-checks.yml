@@ -1,9 +1,8 @@
 name: Release checks
 on:
   push:
-    branches:
-    - release/**
-
+    branches: [ * ]
+    
 jobs:
     demo-job:
         name: Placeholder for release checks script
