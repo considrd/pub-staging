@@ -2,7 +2,7 @@ name: Release checks
 on:
   push:
     branches:
-      - 'release/**'
+    - 'release/**'
 
 jobs:
     demo-job:
