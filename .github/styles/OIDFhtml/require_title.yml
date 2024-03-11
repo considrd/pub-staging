@@ -1,0 +1,15 @@
+extends: occurrence
+
+message: "title is required"
+
+level: error
+
+scope: raw
+
+link: 'https://openid.net/documentation/rules/require_title.html'
+
+min: 1
+
+ignorecase: true
+
+token: "<h1 id=\"title\">"
