@@ -1,6 +1,7 @@
 name: Release checks
 on:
   push:
+    branches/release/*
 
 jobs:
     demo-job:
