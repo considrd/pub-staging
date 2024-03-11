@@ -5,28 +5,26 @@ on:
     - 'release/**'
     
 jobs:
-  linting:
-    name: Get latest version of Vale
-    id: lastversion
-    uses: dvershinin/lastversion-action@v0.0.3
-    with:
-      repository: errata-ai/vale
-    name: Install Vale
-    run: |
-      wget https://github.com/errata-ai/vale/releases/download/v${{ steps.lastversion.outputs.last_version }}/vale_${{ steps.lastversion.outputs.last_version }}_Linux_64-bit.tar.gz -O vale.tar.gz
-      tar -xvzf vale.tar.gz vale
-      rm vale.tar.gz
-    name: Validate the syntax
-    run: ./vale --config=.vale.ini *.md
+  linting2:
+    name: runner / vale
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Vale
+        run: |
+          wget https://github.com/errata-ai/vale/releases/download/v2.29.1/vale_2.29.1_Linux_64-bit.tar.gz -O vale.tar.gz
+          tar -xvzf vale.tar.gz vale
+          rm vale.tar.gz
+      - name: Run Vale
+        run: ./vale --config=.vale.ini
   demo-job:
     name: Placeholder for release checks script
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-          run: echo "$GITHUB_CONTEXT"
-    name: Just echo
-    run: |
-     echo "hello world"
+    - uses: actions/checkout@v3
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+    - name: Just echo
+      run: |
+        echo "hello world"
