@@ -18,7 +18,7 @@ jobs:
       - name: Run Vale
         run: |
           ./vale --version
-          ./vale ls-config
+          ./vale --config=.github/vale/.vale.ini ls-config
           ./vale --config=.github/vale/.vale.ini
   demo-job:
     name: Placeholder for release checks script
