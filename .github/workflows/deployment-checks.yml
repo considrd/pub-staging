@@ -21,7 +21,7 @@ jobs:
           find . -iname '*.html'
           echo
           echo MD files:
-          find . -iname '[!READM]*.md'
+          find . -iname '[!READ]*.md'
           echo
       - name: Run Vale
         run: |
