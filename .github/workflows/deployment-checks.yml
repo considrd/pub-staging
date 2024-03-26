@@ -15,6 +15,14 @@ jobs:
           wget https://github.com/errata-ai/vale/releases/download/v2.29.1/vale_2.29.1_Linux_64-bit.tar.gz -O vale.tar.gz
           tar -xvzf vale.tar.gz vale
           rm vale.tar.gz
+      - name: List Files
+        run: |
+          echo HTML files:
+          find . -iname '*.html'
+          echo
+          echo MD files:
+          find . -iname '*.md'
+          echo
       - name: Run Vale
         run: |
           ./vale --version
