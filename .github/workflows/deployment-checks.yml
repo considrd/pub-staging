@@ -15,10 +15,11 @@ jobs:
           tar -xvzf vale.tar.gz vale
           rm vale.tar.gz
       - name: Run Vale
-        run: ./vale --help
-        run pwd
-        run ls
-        run: ./vale --config=.vale.ini
+        run: |
+          ./vale --help
+          pwd
+          ls
+          ./vale --config=.vale.ini
   demo-job:
     name: Placeholder for release checks script
     runs-on: ubuntu-latest
