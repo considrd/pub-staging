@@ -9,6 +9,7 @@ jobs:
     name: runner / vale
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Install Vale
         run: |
           wget https://github.com/errata-ai/vale/releases/download/v2.29.1/vale_2.29.1_Linux_64-bit.tar.gz -O vale.tar.gz
@@ -17,7 +18,9 @@ jobs:
       - name: Run Vale
         run: |
           ./vale --help
+          echo "pwd:"
           pwd
+          echo "ls:"
           ls
           ./vale --config=.vale.ini
   demo-job:
@@ -32,3 +35,4 @@ jobs:
     - name: Just echo
       run: |
         echo "hello world"
+        ls
