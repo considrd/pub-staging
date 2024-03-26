@@ -1,0 +1,15 @@
+extends: occurrence
+
+message: "Notices section is required"
+
+level: error
+
+scope: raw
+
+link: 'https://openid.net/documentation/rules/document_history_title.html'
+
+min: 1
+
+ignorecase: false
+
+token: "<h2 id=\"name-notices\""

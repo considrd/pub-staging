@@ -1,0 +1,8 @@
+message: "Missing the correct `Copyright` section."
+extends: occurrence
+scope: raw
+level: error
+link: 'https://openid.net/documentation/rules/require_title.html'
+min: 1
+ignorecase: false
+token: "Copyright [(]c[)] 20[23][0-9] The OpenID Foundation[.]"
