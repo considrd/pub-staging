@@ -19,7 +19,7 @@ jobs:
         run: |
           ./vale --version
           ./vale ls-config
-          ./vale --config=./github/vale/.vale.ini
+          ./vale --config=.github/vale/.vale.ini
   demo-job:
     name: Placeholder for release checks script
     runs-on: ubuntu-latest
