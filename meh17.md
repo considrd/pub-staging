@@ -13,7 +13,6 @@ Lorem Ipsum etc etc
 Lorem Ipsum etc etc
 Lorem Ipsum etc etc
 Lorem Ipsum etc etc
-Lorem Ipsum etc etc
 
 Lorem Ipsum etc etc
 Lorem Ipsum etc etc
