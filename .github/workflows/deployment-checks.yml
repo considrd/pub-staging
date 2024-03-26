@@ -28,6 +28,29 @@ jobs:
           ./vale --version
           ./vale --config=.github/vale/.vale.ini ls-config
           ./vale . --config=.github/vale/.vale.ini --glob='[!README]*'
+      - name: check for updated html file
+        run: |
+            echo "updated html check not implemented yet"
+      - name: check file doesn't already exist
+        run: |
+            echo "check file doesn't already exist not implemented yet"
+      - name: check recent publish date
+        run: |
+          date -R
+          echo "check publish date not implemented yet"
+      - name: check file naming standard conformance
+        run: |
+          echo "naming standard conformance check not implemented yet"
+      - name: check file is an incremental version
+        run: |
+          echo "check file is an incremental version not implemented yet"
+      - name: check embedded content is actually embedded
+        run: |
+          echo "check embedded content is embedded not implemented yet"
+      - name: check references are latest and links are correct
+        run: |
+          echo "check references are latest and links are correct not implemented yet"
+      
   demo-job:
     name: Placeholder for release checks script
     runs-on: ubuntu-latest
