@@ -1,4 +1,4 @@
-%%% title = "OpenID Connect for Demo and test Draft" abbrev = "openid-connect-4-identity-assurance-1_0-draft"
+%%% title = "OpenID Connect for Demo and test Draft" abbrev = "openid-connect-4-test+demo-1_0-draft"
 
 file: meh17.md
 branch: release/meh17
