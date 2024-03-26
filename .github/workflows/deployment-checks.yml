@@ -17,11 +17,8 @@ jobs:
           rm vale.tar.gz
       - name: Run Vale
         run: |
-          ./vale --help
-          echo "pwd:"
-          pwd
-          echo "ls:"
-          ls
+          ./vale --version
+          ./vale ls-config
           ./vale --config=.vale.ini
   demo-job:
     name: Placeholder for release checks script
