@@ -1,0 +1,15 @@
+extends: occurrence
+
+message: "title should only be used once"
+
+level: error
+
+scope: heading
+
+link: 'https://openid.net/documentation/rules/only_1_title.html'
+
+max: 1
+
+ignorecase: true
+
+token: "id=\"title\""

@@ -1,0 +1,16 @@
+extends: occurrence
+
+message: "Notices section heading should not be repeated"
+
+level: error
+
+scope: heading
+
+link: 'https://openid.net/documentation/rules/only_1_title.html'
+
+max: 1
+
+ignorecase: false
+
+token: "id=\"name-notices\""
+
