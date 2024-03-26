@@ -12,5 +12,6 @@ max: 1
 
 ignorecase: false
 
-token: "<h2 id="name-notices">"
+token: "<h2 id=\"name-notices\"">
+
 
