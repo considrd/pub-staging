@@ -23,10 +23,8 @@ jobs:
           echo MD files:
           find . -iname '[!READ]*.md'
           echo
-      - name: Run Vale
+      - name: Run Vale Linter Checks
         run: |
-          ./vale --version
-          ./vale --config=.github/vale/.vale.ini ls-config
           ./vale . --config=.github/vale/.vale.ini --glob='[!README]*'
       - name: check for updated html file ** not implemented
         run: |
