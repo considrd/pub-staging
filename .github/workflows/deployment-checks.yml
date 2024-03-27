@@ -6,7 +6,7 @@ on:
     
 jobs:
   linting2:
-    name: runner / vale
+    name: Document Release Checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,39 +28,25 @@ jobs:
           ./vale --version
           ./vale --config=.github/vale/.vale.ini ls-config
           ./vale . --config=.github/vale/.vale.ini --glob='[!README]*'
-      - name: check for updated html file
+      - name: check for updated html file ** not implemented
         run: |
             echo "updated html check not implemented yet"
-      - name: check file doesn't already exist
+      - name: check file doesn't already exist ** not implemented
         run: |
             echo "check file doesn't already exist not implemented yet"
-      - name: check recent publish date
+      - name: check recent publish date ** not implemented
         run: |
           date -R
           echo "check publish date not implemented yet"
-      - name: check file naming standard conformance
+      - name: check file naming standard conformance ** not implemented
         run: |
           echo "naming standard conformance check not implemented yet"
-      - name: check file is an incremental version
+      - name: check file is an incremental version ** not implemented
         run: |
           echo "check file is an incremental version not implemented yet"
-      - name: check embedded content is actually embedded
+      - name: check embedded content is actually embedded ** not implemented
         run: |
           echo "check embedded content is embedded not implemented yet"
-      - name: check references are latest and links are correct
+      - name: check references are latest and links are correct ** not implemented
         run: |
           echo "check references are latest and links are correct not implemented yet"
-      
-  demo-job:
-    name: Placeholder for release checks script
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
-    - name: Just echo
-      run: |
-        echo "hello world"
-        ls
