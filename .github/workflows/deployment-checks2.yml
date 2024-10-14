@@ -26,6 +26,8 @@ jobs:
         with:
           repository: considrd/openid-workflow
           path: main
+          ssh-key: ${{ secrets.OPENID_WORKFLOW_DEPLOY_KEY }}
+          
 
       - name: List Files
         run: |
