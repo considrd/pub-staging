@@ -51,9 +51,12 @@ jobs:
         id: python_path
         run: echo "::set-output name=path::$(which python)"
 
-      - name: GIT me last change
+      - name: GIT me last commit
         run: |
           git log -1
+
+      - name: GIT me files changed
+        run: |
           git diff --name-only main
 
       - name: Get state of document
