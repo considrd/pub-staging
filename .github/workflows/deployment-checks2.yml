@@ -1,4 +1,4 @@
-name: Release checks
+name: Release checks 2
 on:
   push:
     branches: 
