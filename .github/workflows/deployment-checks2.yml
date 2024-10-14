@@ -52,7 +52,9 @@ jobs:
         run: echo "::set-output name=path::$(which python)"
 
       - name: Test run cli-tool.py
-        run: python cli-tool.py
+        run: |
+          cd ./main
+          python cli-tool.py
 
   CreatePR:
     name: Placeholder for release checks script
