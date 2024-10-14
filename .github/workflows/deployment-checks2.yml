@@ -21,16 +21,11 @@ jobs:
           find . -iname '[!READ]*.md'
           echo
 
-      - name: Make Spec-lint directory
-        run: |
-          mkdir spec-lint
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
           repository: considrd/openid-workflow
-          ref: main
-          path: /spec-lint
+          path: main
 
       - name: List Files
         run: |
