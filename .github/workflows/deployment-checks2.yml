@@ -52,7 +52,9 @@ jobs:
         run: echo "::set-output name=path::$(which python)"
 
       - name: GIT me last change
-        run: git log -1
+        run: |
+          git log -1
+          git diff --name-only main
 
       - name: Get state of document
         run: |
