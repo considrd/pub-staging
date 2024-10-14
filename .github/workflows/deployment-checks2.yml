@@ -32,7 +32,7 @@ jobs:
       - name: List Files
         run: |
           ls -l
-          ls -l /main
+          ls -l ./main
 
 
   CreatePR:
