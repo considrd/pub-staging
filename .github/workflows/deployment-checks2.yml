@@ -21,6 +21,12 @@ jobs:
           find . -iname '[!READ]*.md'
           echo
 
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: considrd/openid-workflow
+
+
   CreatePR:
     name: Placeholder for release checks script
     runs-on: ubuntu-latest
