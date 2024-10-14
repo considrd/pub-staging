@@ -51,10 +51,10 @@ jobs:
         id: python_path
         run: echo "::set-output name=path::$(which python)"
 
-      - name: Test run cli-tool.py
+      - name: Get state of document
         run: |
           cd ./main
-          python cli-tool.py
+          python cli-tool.py -state ../ekyc-ida/openid-connect-4-identity-assurance-1_0-final.html
 
   CreatePR:
     name: Placeholder for release checks script
