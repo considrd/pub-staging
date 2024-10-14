@@ -31,7 +31,7 @@ jobs:
 
       - name: List Files
         run: |
-          ls -l ./spec-lint/   
+          ls -l
 
 
   CreatePR:
