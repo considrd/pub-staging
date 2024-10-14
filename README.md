@@ -1,19 +1,21 @@
 # pub-staging
 
-This Repository is for submission, review and deployment of proposed Implementer's drafts, Final Specifications and Errata Specifications.
-
+This Repository is for proposal, review and deployment of proposed Work Group Drafts, Implementer's drafts, Final Specifications and Errata Specifications.
 
 ## Process 
-for working group co-chairs and/or editors to propose a document for publication...
+For working group co-chairs and/or editors to propose a document for publication with support from the OIDF Secretary and their delegates.
 
-1. Make sure their github ID is added to *** team in github org *** 
-2. Create a branch named in the following format...  *** branch naming ***
-3. Push proposed document and its source(s) into the branch
-4. Once satisfied, then the co-chair or editor should create a PR
-
-... potentially other steps TBC
-
-Folllowing this, the review process will begin and either the proposed documents will be merged into main and published to openid.net/specs/ or feedback will be provided via github comments on any issues detected with the propoed document.
+1. Make sure their github ID is added to the appropriate team in GitHub (there is one team per WG)
+2. Clone the repository
+3. Create a branch named in the following format...  __proposed/**__
+4. Add the files they wish to propose (this should include at least one .html and the source .md, .xml, .txt) to the Work Group sub-directory
+5. Push the updated branch and its source(s) to the remote branch
+6. At this point a GitHub Action is triggered that will run a number of checks on the proposed html documents 
+7. Once the GitHub action is complete it will email the corresponding WG co-chair team and if successful will also raise a PR automatically and e-mail the Secretary team (if the checks fail then the WG co-chaors should update and re-submit having reviewed the output of the GitHub Action)
+8. The Secretarial Team will review the PR and perform any final human checks needed
+9. If comfortable with the proposal the Secretarial team will approve the PR
+10. When PR is approved another GitHub Action is triggered to deploy the new documents to openid.net/specs
+11. When deployment is successful the PR is merged automatically to main
 
 ## Checks
 There are checks performed prior to publication that, if failed, may need modification to documents proposed for publication. These are:
@@ -21,7 +23,7 @@ There are checks performed prior to publication that, if failed, may need modifi
 ### Internal *-<draft>.html Checks
 > * Verify html includes “draft” or “final” in document metadata
 > * Verify that -nn draft number in the pathname corresponds to the draft number in the specification in non-final drafts
-> * Verify that -nn draft has not already been published at openid.net/specs/ (or same for the -final, -IDn, or -erratan versions)
+> * Verify that -nn draft has not already been published at openid.net/specs/ (or same for the -final, -IDn, or -errata versions)
 > * Check history section exists (except for final and errata specs)
 > * Check Notices section exists
 > * Check copyright year is current year
