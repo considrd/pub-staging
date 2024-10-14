@@ -52,7 +52,6 @@ jobs:
         run: echo "::set-output name=path::$(which python)"
 
       - name: Test run cli-tool.py
-        id: cli-tool.py execution
         run: python cli-tool.py
 
   CreatePR:
