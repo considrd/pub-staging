@@ -1,0 +1,36 @@
+name: Release checks
+on:
+  push:
+    branches: 
+    - 'release/**'
+  workflow_dispatch:
+    
+jobs:
+  Check:
+    name: Run checks on proposed OIDF specs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: List Files
+        run: |
+          echo HTML files:
+          find . -iname '*.html'
+          echo
+          echo MD files:
+          find . -iname '[!READ]*.md'
+          echo
+
+  CreatePR:
+    name: Placeholder for release checks script
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+    - name: Just echo
+      run: |
+        echo "hello world"
+        ls
