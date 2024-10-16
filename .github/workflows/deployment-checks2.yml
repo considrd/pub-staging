@@ -58,8 +58,10 @@ jobs:
       - name: GIT me files changed
         run: |
           git diff --name-only main
+      
+      - name: GIT me files changed
+        run: |
           git log --name-only --oneline -1
-
 
       - name: Get state of document
         run: |
