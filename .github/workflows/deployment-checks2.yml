@@ -73,6 +73,7 @@ jobs:
           ls -l
           cd ./main
           ls -l
+          chmod +x ./process.sh
           ./process.sh
           
   CreatePR:
