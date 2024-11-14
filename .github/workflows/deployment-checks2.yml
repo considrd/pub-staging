@@ -47,7 +47,7 @@ jobs:
 
       - name: Install Python requirements
         run: |
-          cd ./main
+          cd ./openid-workflow
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
@@ -67,7 +67,7 @@ jobs:
        
       - name: Get state of document
         run: |
-          cd ./main
+          cd ./openid-workflow
           python cli-tool.py -filename-state ../ekyc-ida/openid-connect-4-identity-assurance-1_0-final.html
 
       - name: Run checks process
