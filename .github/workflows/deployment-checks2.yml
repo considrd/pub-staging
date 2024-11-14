@@ -59,14 +59,20 @@ jobs:
       
       - name: GIT me files changed
         run: |
-          HTML_FILE=$(git diff --name-only origin/main...HEAD | grep '\.html$' | head -n 1)
-          echo $HTML_FILE
-
+          CHANGED_HTML_FILES=$(git diff --name-only origin/main...HEAD | grep '\.html$')
+          echo $CHANGED_HTML_FILES
+          set - $CHANGED_HTML_FILES
+       
       - name: Get state of document
         run: |
+          
           cd ./main
           python cli-tool.py -filename-state ../ekyc-ida/openid-connect-4-identity-assurance-1_0-final.html
 
+      - name: Run checks process
+        run : |
+          process.sh
+          
   CreatePR:
     name: Placeholder for release checks script
     runs-on: ubuntu-latest
