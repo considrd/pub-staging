@@ -65,12 +65,14 @@ jobs:
        
       - name: Get state of document
         run: |
-          
           cd ./main
           python cli-tool.py -filename-state ../ekyc-ida/openid-connect-4-identity-assurance-1_0-final.html
 
       - name: Run checks process
         run : |
+          ls -l
+          cd ./main
+          ls -l
           process.sh
           
   CreatePR:
