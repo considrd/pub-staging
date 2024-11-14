@@ -27,13 +27,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: considrd/openid-workflow
-          path: main
+          path: openid-workflow
           ssh-key: ${{ secrets.OPENID_WORKFLOW_DEPLOY_KEY }}
           
       - name: List Files
         run: |
           ls -l
-          ls -l ./main
+          ls -l ./openid-workflow
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -41,7 +41,9 @@ jobs:
           python-version: '3.x'
 
       - name: Install Unix 'tree' tool
-        run: sudo apt-get install tree -y
+        run: |
+          sudo apt-get install tree -y
+          tree
 
       - name: Install Python requirements
         run: |
@@ -71,7 +73,7 @@ jobs:
       - name: Run checks process
         run : |
           ls -l
-          cd ./main
+          cd ./openid-workflow
           ls -l
           ls -l ../ekyc-ida
           chmod +x ./process.sh
