@@ -73,7 +73,7 @@ jobs:
           ls -l
           cd ./main
           ls -l
-          process.sh
+          ./process.sh
           
   CreatePR:
     name: Placeholder for release checks script
