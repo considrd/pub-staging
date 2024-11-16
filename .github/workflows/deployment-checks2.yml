@@ -54,10 +54,6 @@ jobs:
       - name: Output Python path
         id: python_path
         run: echo "::set-output name=path::$(which python)"
-
-      - name: GIT me last commit
-        run: |
-          git log -1
       
       - name: GIT me files changed
         run: |
@@ -66,6 +62,7 @@ jobs:
 
       - name: Run checks process
         run : |
+          cd ./openid-workflow
           chmod +x ./process.sh
           ./process.sh
           
