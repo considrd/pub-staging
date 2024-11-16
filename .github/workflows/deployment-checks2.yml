@@ -63,11 +63,6 @@ jobs:
         run: |
           CHANGED_HTML_FILES=$(git diff --name-only origin/main...HEAD | grep '\.html$')
           echo -e "\e[33m$CHANGED_HTML_FILES"
-       
-      - name: Get state of document
-        run: |
-          cd ./openid-workflow
-          python cli-tool.py -filename-state ../ekyc-ida/openid-connect-4-identity-assurance-1_0-final.html
 
       - name: Run checks process
         run : |
