@@ -29,11 +29,6 @@ jobs:
           repository: considrd/openid-workflow
           path: openid-workflow
           ssh-key: ${{ secrets.OPENID_WORKFLOW_DEPLOY_KEY }}
-          
-      - name: List Files
-        run: |
-          ls -l
-          ls -l ./openid-workflow
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -65,17 +60,3 @@ jobs:
           cd ./openid-workflow
           chmod +x ./process.sh
           ./process.sh
-          
-  CreatePR:
-    name: Placeholder for release checks script
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
-    - name: Just echo
-      run: |
-        echo "hello world"
-        ls
