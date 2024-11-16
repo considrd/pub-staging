@@ -60,4 +60,3 @@ jobs:
           cd ./openid-workflow
           chmod +x ./process.sh
           ./process.sh
-          echo "debug: back in GH Job"
