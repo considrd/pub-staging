@@ -66,10 +66,6 @@ jobs:
 
       - name: Run checks process
         run : |
-          ls -l
-          cd ./openid-workflow
-          ls -l
-          ls -l ../ekyc-ida
           chmod +x ./process.sh
           ./process.sh
           
