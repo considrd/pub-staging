@@ -49,11 +49,6 @@ jobs:
       - name: Output Python path
         id: python_path
         run: echo "::set-output name=path::$(which python)"
-      
-      - name: GIT me files changed
-        run: |
-          CHANGED_HTML_FILES=$(git diff --name-only origin/main...HEAD | grep '\.html$')
-          echo -e "\e[33m$CHANGED_HTML_FILES"
 
       - name: Run checks process
         run : |
