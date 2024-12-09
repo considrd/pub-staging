@@ -1223,7 +1223,7 @@ li > p:last-of-type:only-child {
 <dd class="workgroup">fapi</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-12-04" class="published">4 December 2024</time>
+<time datetime="2024-12-08" class="published">8 December 2024</time>
     </dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
@@ -1800,7 +1800,7 @@ to recover from a loss of a new refresh token on issue. The details of this mech
 outside the scope of this specification.<a href="#section-5.3.2.1-4" class="pilcrow">¶</a></p>
 <p id="section-5.3.2.1-5"><strong>NOTE 2</strong>:
 This document is structured to support a variety of grants to be used with the general
-requirements above. For example the client credentials grant or the FAPI CIBA grant <span>[<a href="#FAPICIBA" class="cite xref">FAPICIBA</a>]</span>.
+requirements above. For example the client credentials grant or the  IBA grant <span>[<a href="#CIBA" class="cite xref">CIBA</a>]</span>.
 Implementers should note that as of the time of writing only the authorization code flow and CIBA
 flows have been through a detailed security analysis <span>[<a href="#FAPI2SEC" class="cite xref">FAPI2SEC</a>]</span>.<a href="#section-5.3.2.1-5" class="pilcrow">¶</a></p>
 <p id="section-5.3.2.1-6"><strong>NOTE 3</strong>:
@@ -2630,6 +2630,10 @@ established by <span>[<a href="#RFC7591" class="cite xref">RFC7591</a>]</span>:<
 <a href="#section-10" class="section-number selfRef">10. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
       </h2>
 <dl class="references">
+<dt id="CIBA">[CIBA]</dt>
+      <dd>
+<span class="refAuthor">Fernandez Rodriguez, G.</span>, <span class="refAuthor">Walter, F.</span>, <span class="refAuthor">Nennker, A.</span>, <span class="refAuthor">Tonge, D.</span>, and <span class="refAuthor">B. Campbell</span>, <span class="refTitle">"OpenID Connect Client-Initiated Backchannel Authentication Flow - Core 1.0"</span>, <time datetime="2021-09-01" class="refDate">1 September 2021</time>, <span>&lt;<a href="http://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html">http://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="FAPI1SEC">[FAPI1SEC]</dt>
       <dd>
 <span class="refAuthor">Fett, D.</span>, <span class="refAuthor">Hosseyni, P.</span>, and <span class="refAuthor">R. Kuesters</span>, <span class="refTitle">"An Extensive Formal Security Analysis of the OpenID Financial-grade API"</span>, <time datetime="2019-01-31" class="refDate">31 January 2019</time>, <span>&lt;<a href="https://arxiv.org/abs/1901.11520">https://arxiv.org/abs/1901.11520</a>&gt;</span>. </dd>
@@ -2637,10 +2641,6 @@ established by <span>[<a href="#RFC7591" class="cite xref">RFC7591</a>]</span>:<
 <dt id="FAPI2SEC">[FAPI2SEC]</dt>
       <dd>
 <span class="refAuthor">Hosseyni, P.</span>, <span class="refAuthor">Kuesters, R.</span>, and <span class="refAuthor">T. Würtele</span>, <span class="refTitle">"Formal Security Analysis of the OpenID Financial-grade API 2.0"</span>, <time datetime="2024-07-08" class="refDate">8 July 2024</time>, <span>&lt;<a href="https://doi.ieeecomputersociety.org/10.1109/CSF61375.2024.00002">https://doi.ieeecomputersociety.org/10.1109/CSF61375.2024.00002</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="FAPICIBA">[FAPICIBA]</dt>
-      <dd>
-<span class="refAuthor">Tonge, D.</span>, <span class="refTitle">"FAPI Client Initiated Backchannel Authentication Profile"</span>, <time datetime="2024-01-17" class="refDate">17 January 2024</time>, <span>&lt;<a href="https://openid.bitbucket.io/fapi/fapi-ciba.html">https://openid.bitbucket.io/fapi/fapi-ciba.html</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="FAPIMessageSigning">[FAPIMessageSigning]</dt>
       <dd>
