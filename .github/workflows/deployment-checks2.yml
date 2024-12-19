@@ -7,21 +7,12 @@ on:
     
 jobs:
   Check:
-    name: Run checks on proposed OIDF specs
+    name: Run automated checks on proposed OIDF specs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with: 
           fetch-depth: 0
-
-      - name: List Files
-        run: |
-          echo HTML files:
-          find . -iname '*.html'
-          echo
-          echo MD files:
-          find . -iname '[!READ]*.md'
-          echo
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,27 +21,24 @@ jobs:
           path: openid-workflow
           ssh-key: ${{ secrets.OPENID_WORKFLOW_DEPLOY_KEY }}
 
+      - name: Run 'tree' tool
+        run: |
+          sudo apt-get install tree -y
+          tree
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-
-      - name: Install Unix 'tree' tool
-        run: |
-          sudo apt-get install tree -y
-          tree
 
       - name: Install Python requirements
         run: |
           cd ./openid-workflow
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          echo "::set-output name=path::$(which python)"
 
-      - name: Output Python path
-        id: python_path
-        run: echo "::set-output name=path::$(which python)"
-
-      - name: Run checks process
+      - name: Run OpenID pre-publication checks
         run : |
           cd ./openid-workflow
           chmod +x ./process.sh
