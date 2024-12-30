@@ -2,7 +2,7 @@ name: Release checks 2
 on:
   push:
     branches: 
-    - 'release/**'
+    - 'propose/**'
   workflow_dispatch:
     
 jobs:
