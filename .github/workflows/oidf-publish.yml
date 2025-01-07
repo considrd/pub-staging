@@ -37,6 +37,7 @@ jobs:
       - name: Run OpenID pre-publication checks
         run : |
           ls -l
+          mkdir ./to-publish
           cd ./publication-scripts
           chmod +x ./publish.sh
           ./publish.sh
