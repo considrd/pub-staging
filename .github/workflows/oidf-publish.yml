@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish_to_specs:
-    name: list_remote_ssh
+    name: OIDF-Publish
     runs-on: ubuntu-latest
     environment: openid.net/specs/
     steps:
@@ -18,9 +18,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: openid/publication-checks
+          repository: considrd/openid-workflow
           path: publication-checks
-          ssh-key: ${{ secrets.OPENID_PUBLICATION_DEPLOY_KEY }}
+          ssh-key: ${{ secrets.OPENID_WORKFLOW_DEPLOY_KEY }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
