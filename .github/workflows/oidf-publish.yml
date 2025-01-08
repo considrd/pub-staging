@@ -36,7 +36,6 @@ jobs:
 
       - name: Run OpenID pre-publication checks
         run : |
-          ls -l
           mkdir ./to-publish
           cd ./publication-scripts
           chmod +x ./publish.sh
@@ -57,18 +56,16 @@ jobs:
               ls
               ls /var/www/openid.net/htdocs/specs/
 
-      - name: Run OpenID publication
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Copy OpenID publication to Web Server
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.OIDF_SPECS_HOST }}
           username: ${{ secrets.OIDF_USERID }}
           key: ${{ secrets.OIDF_USERID_KEY }}
           port: ${{ secrets.OIDF_SPECS_PORT }}
-          script: |
-              whoami
-              pwd
-              ls
-              ls /var/www/openid.net/htdocs/specs/
+          source: "emptytest/test.txt"
+          target: your_server_target_folder_path
+
 
 
   
