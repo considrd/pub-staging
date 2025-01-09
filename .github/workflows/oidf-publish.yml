@@ -41,7 +41,7 @@ jobs:
           chmod +x ./publish.sh
           ./publish.sh
           cd ../to-publish
-          ls -l
+
 
       - name: list remote /specs via ssh
         uses: appleboy/ssh-action@v1.0.3
