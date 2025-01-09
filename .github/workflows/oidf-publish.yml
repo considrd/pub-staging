@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish_to_specs:
-    name: list_remote_ssh
+    name: OIDF-Publish
     runs-on: ubuntu-latest
     environment: openid.net/specs/
     steps:
@@ -18,9 +18,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: openid/publication-checks
-          path: publication-checks
-          ssh-key: ${{ secrets.OPENID_PUBLICATION_DEPLOY_KEY }}
+          repository: considrd/openid-workflow
+          path: publication-scripts
+          ssh-key: ${{ secrets.OPENID_WORKFLOW_DEPLOY_KEY }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -29,18 +29,19 @@ jobs:
 
       - name: Install Python requirements
         run: |
-          cd ./publication-checks
+          cd ./publication-scripts
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           echo "::set-output name=path::$(which python)"
 
       - name: Run OpenID pre-publication checks
         run : |
-          cd ./openid-workflow
+          mkdir ./to-publish
+          cd ./publication-scripts
           chmod +x ./publish.sh
           ./publish.sh
           cd ../to-publish
-          ls -l
+
 
       - name: list remote /specs via ssh
         uses: appleboy/ssh-action@v1.0.3
@@ -55,18 +56,16 @@ jobs:
               ls
               ls /var/www/openid.net/htdocs/specs/
 
-      - name: Run OpenID publication
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Copy OpenID publication to Web Server
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.OIDF_SPECS_HOST }}
           username: ${{ secrets.OIDF_USERID }}
           key: ${{ secrets.OIDF_USERID_KEY }}
           port: ${{ secrets.OIDF_SPECS_PORT }}
-          script: |
-              whoami
-              pwd
-              ls
-              ls /var/www/openid.net/htdocs/specs/
+          source: "emptytest/test.txt"
+          target: your_server_target_folder_path
+
 
 
   
