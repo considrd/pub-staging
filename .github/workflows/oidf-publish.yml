@@ -40,6 +40,7 @@ jobs:
           cd ./publication-scripts
           chmod +x ./publish.sh
           ls -l
+          cat -n ./publish.sh
           ./publish.sh
           cd ../to-publish
 
