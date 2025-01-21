@@ -39,9 +39,9 @@ jobs:
           mkdir ./to-publish
           cd ./publication-scripts
           chmod +x ./publish.sh
+          ls -l
           ./publish.sh
           cd ../to-publish
-
 
       - name: list remote /specs via ssh
         uses: appleboy/ssh-action@v1.0.3
